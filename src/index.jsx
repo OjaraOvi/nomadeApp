@@ -1,27 +1,21 @@
 import React, { useState } from "react";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Button } from "react-native";
-import { CustomModal } from "./component";
+import { StyleSheet, View } from "react-native";
+import NewOrder from "./screens/new-order/index";
+import SignUp from "./screens/sign-up/index";
 
 export default function App() {
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [user, setUser] = useState("");
 
-  const onHandlerModalNewOrder = () => {
-    setIsModalVisible(!isModalVisible);
+  const hijoAPadre = (datoshijo) => {
+    setUser(datoshijo);
   };
 
-  const onHandleCancel = () => {
-    setIsModalVisible(!isModalVisible);
-  };
+  const Content = () =>
+    user ? <NewOrder /> : <SignUp hijoAPadre={hijoAPadre} />;
 
   return (
     <View style={styles.container}>
-      <Text>Nuevo Pedido</Text>
-      <Button title="Nuevo" onPress={onHandlerModalNewOrder} />
-      <CustomModal
-        isModalVisible={isModalVisible}
-        onHandleCancel={onHandleCancel}
-      />
+      <Content />
     </View>
   );
 }
