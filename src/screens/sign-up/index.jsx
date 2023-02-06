@@ -1,20 +1,19 @@
-import { View, Text, TextInput, Button, StyleSheet } from "react-native";
+import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 
-const SignUp = ({ hijoAPadre }) => {
-  const user = 1;
+const SignUp = () => {
   return (
     <View>
       <Text style={styles.title}>Registro</Text>
       <TextInput placeholder="Correo" />
       <TextInput placeholder="Usuario" />
-      <Button title="registrar" onPress={() => hijoAPadre(user)} />
+      <Button title="registrar" />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   title: {
-    fontFamily: "Karma-Bold",
+    fontFamily: 'Karma-Bold',
     fontSize: 20,
   },
 });
