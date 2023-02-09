@@ -2,6 +2,7 @@
 import { useFonts } from 'expo-font';
 import React from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
+
 import AppNavigator from './navigation';
 
 const App = () => {

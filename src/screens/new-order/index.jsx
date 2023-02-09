@@ -1,6 +1,7 @@
+/*
 import React, { useState } from 'react';
 import { Text, View, Button } from 'react-native';
-import { CustomModal } from '../../component/index';
+import { CustomModal } from '../../components/index';
 import { styles } from './styles';
 
 const NewOrder = () => {
@@ -23,3 +24,4 @@ const NewOrder = () => {
 };
 
 export default NewOrder;
+*/

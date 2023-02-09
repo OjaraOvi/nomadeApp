@@ -1,12 +1,12 @@
 // @ts-ignore
 import { NavigationContainer } from '@react-navigation/native';
 
-import ShopNavigation from './ShopNavigation';
+import TabsNavigator from './tabs';
 
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <ShopNavigation />
+      <TabsNavigator />
     </NavigationContainer>
   );
 };
