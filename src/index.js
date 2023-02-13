@@ -4,6 +4,8 @@ import React from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 
 import AppNavigator from './navigation';
+import { Provider } from 'react-redux';
+import store from './store/index';
 
 const App = () => {
   const [loaded] = useFonts({
@@ -27,7 +29,11 @@ const App = () => {
       </View>
     );
 
-  return <AppNavigator />;
+  return (
+    <Provider store={store}>
+      <AppNavigator />
+    </Provider>
+  );
 };
 
 const styles = StyleSheet.create({

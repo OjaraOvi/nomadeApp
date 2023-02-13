@@ -1,17 +1,18 @@
 import React from 'react';
 import { SafeAreaView, FlatList } from 'react-native';
-
+import { useSelector } from 'react-redux';
 // @ts-ignore
 import { styles } from './styles';
 import { ProductItem } from '../../components/index';
 import { PRODUCTS } from '../../constants/data/index';
 
 const Products = ({ navigation, route }) => {
-  const { categoryId, title } = route.params;
+  //const { categoryId, title } = route.params;
+  const category = useSelector((state) => state.category.selected);
 
-  console.warn(title, categoryId);
+  //console.warn(title, categoryId);
 
-  const filteredProducts = PRODUCTS.filter((product) => product.categoryId === categoryId);
+  const filteredProducts = PRODUCTS.filter((product) => product.categoryId === category.id);
 
   const onSelected = (item) => {
     navigation.navigate('ProductDetail', {
