@@ -4,6 +4,7 @@ import React from 'react';
 
 import { THEME } from '../constants/themes/index';
 import Categories from '../screens/categories/index';
+import ProductDetail from '../screens/details/index';
 import Login from '../screens/login/index';
 //import NewOrder from '../screens/new-order/index';
 import Products from '../screens/products/index';
@@ -31,6 +32,13 @@ const ShopNavigator = () => {
       <Stack.Screen
         name="Product"
         component={Products}
+        options={({ route }) => ({
+          title: route.params.title,
+        })}
+      />
+      <Stack.Screen
+        name="Detail"
+        component={ProductDetail}
         options={({ route }) => ({
           title: route.params.title,
         })}

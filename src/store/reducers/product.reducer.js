@@ -3,7 +3,7 @@ import { productsType } from '../types/products.type';
 
 const { FILTER_PRODUCTS, SELECT_PRODUCT } = productsType;
 const initialState = {
-  categories: PRODUCTS,
+  products: PRODUCTS,
   filteredProducts: [],
   selected: null,
 };

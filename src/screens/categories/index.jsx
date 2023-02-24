@@ -1,7 +1,7 @@
 import { FlatList, SafeAreaView } from 'react-native';
-import { CategoryItem } from '../../components/index';
-import { CATEGORIES } from '../../constants/data/categories';
 import { useSelector, useDispatch } from 'react-redux';
+
+import { CategoryItem } from '../../components/index';
 import { selectCategory } from '../../store/actions/category.action';
 const Categoies = ({ navigation }) => {
   const dispatch = useDispatch();

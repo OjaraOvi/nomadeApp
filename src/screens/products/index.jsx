@@ -1,28 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { SafeAreaView, FlatList } from 'react-native';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
 // @ts-ignore
 import { styles } from './styles';
 import { ProductItem } from '../../components/index';
-import { PRODUCTS } from '../../constants/data/index';
+import { selectProduct, filterProducts } from '../../store/actions/index';
 
-const Products = ({ navigation, route }) => {
-  //const { categoryId, title } = route.params;
+const Products = ({ navigation }) => {
+  const dispatch = useDispatch();
+  // @ts-ignore
   const category = useSelector((state) => state.category.selected);
-
-  //console.warn(title, categoryId);
-
-  const filteredProducts = PRODUCTS.filter((product) => product.categoryId === category.id);
+  // @ts-ignore
+  const filteredProducts = useSelector((state) => state.products.filteredProducts);
 
   const onSelected = (item) => {
-    navigation.navigate('ProductDetail', {
-      productId: item.id,
+    dispatch(selectProduct(item.id));
+    navigation.navigate('Detail', {
       title: item.title,
     });
   };
 
   const renderItem = ({ item }) => <ProductItem item={item} onSelected={onSelected} />;
   const keyExtractor = (item) => item.id.toString();
+  useEffect(() => {
+    dispatch(filterProducts(category.id));
+  }, []);
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
