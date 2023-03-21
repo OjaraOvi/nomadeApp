@@ -4,6 +4,7 @@ import React from 'react';
 
 import { THEME } from '../constants/themes/index';
 import Cart from '../screens/cart/index';
+import Location from '../screens/location/index';
 
 const Stack = createNativeStackNavigator();
 const CartNavigator = () => {
@@ -23,6 +24,7 @@ const CartNavigator = () => {
         },
       }}>
       <Stack.Screen name="Cart" component={Cart} />
+      <Stack.Screen name="Location" component={Location} />
     </Stack.Navigator>
   );
 };

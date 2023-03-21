@@ -16,6 +16,10 @@ const Cart = ({ navigation }) => {
     //  dispatch(remoreFromCart(id));
   };
   const onCreateOrder = () => {
+    navigation.navigate('Location', {
+      //  categoryId: item.id,
+      //title: item.title,
+    });
     //   dispatch(confirmOrder(cart, total));
   };
   const renderItem = ({ item }) => <CartItem item={item} onDelete={onDelete} />;

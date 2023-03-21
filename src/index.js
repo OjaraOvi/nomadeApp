@@ -2,10 +2,20 @@
 import { useFonts } from 'expo-font';
 import React from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
+import { init } from './db';
 
 import AppNavigator from './navigation';
 import { Provider } from 'react-redux';
 import store from './store/index';
+
+init()
+  .then(() => {
+    console.log('Initializing database');
+  })
+  .catch((err) => {
+    console.log('Initializing db failed');
+    console.log(err);
+  });
 
 const App = () => {
   const [loaded] = useFonts({
