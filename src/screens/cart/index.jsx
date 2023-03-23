@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { styles } from './styles';
 import CartItem from '../../components/cart-item/index';
-//import { confirmOrder, remoreFromCart } from '../../store/actions/index';
+import { confirmOrder, remoreFromCart } from '../../store/actions/index';
 
 const Cart = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -16,11 +16,11 @@ const Cart = ({ navigation }) => {
     //  dispatch(remoreFromCart(id));
   };
   const onCreateOrder = () => {
+    dispatch(confirmOrder(cart, total));
     navigation.navigate('Location', {
       //  categoryId: item.id,
       //title: item.title,
     });
-    //   dispatch(confirmOrder(cart, total));
   };
   const renderItem = ({ item }) => <CartItem item={item} onDelete={onDelete} />;
   const keyExtractor = (item) => item.id.toString();

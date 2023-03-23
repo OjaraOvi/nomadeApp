@@ -21,3 +21,40 @@ export const init = () => {
 
   return promise;
 };
+
+export const insertPlance = (title, image, address, coords) => {
+  const promise = new Promise((resolve, reject) => {
+    db.transaction((tx) => {
+      tx.executeSql(
+        'INSESRT INTO places (title, address,coords) VALUES (?,?,?);',
+        [title, address, JSON.stringify(coords)],
+        (_, result) => {
+          resolve(result);
+        },
+        (_, err) => {
+          reject(err);
+        }
+      );
+    });
+  });
+
+  return promise;
+};
+
+export const getPlaces = () => {
+  const promise = (resolve, reject) => {
+    db.transaction((txt) => {
+      txt.executeSql(
+        'SELECT * FROM places',
+        [],
+        (_, result) => {
+          resolve(result);
+        },
+        (_, err) => {
+          reject(err);
+        }
+      );
+    });
+  };
+  return promise;
+};
