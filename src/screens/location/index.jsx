@@ -3,6 +3,7 @@ import * as Location from 'expo-location';
 import { View, Button, Alert, Text, ScrollView } from 'react-native';
 import { styles } from './styles';
 import { useState } from 'react';
+import { MapPreview } from '../../components/index';
 
 const LocationSelector = ({ onLocation }) => {
   const [pickedLocation, setPickedLocation] = useState(null);
@@ -27,14 +28,11 @@ const LocationSelector = ({ onLocation }) => {
   return (
     <ScrollView style={styles.container}>
       <View>
-        <View style={styles.preview}>
-          {!pickedLocation ? (
-            <Text>No hay ubicacion seleccionada</Text>
-          ) : (
-            <Text>{'Latitud: ' + pickedLocation.lat + ' Longitud: ' + pickedLocation.lng}</Text>
-          )}
-        </View>
+        <MapPreview location={pickedLocation} style={styles.preview}>
+          <Text>No hay ubicacion seleccionada</Text>
+        </MapPreview>
         <Button title="Selecionar ubicación" onPress={onHandlerGetLocation} />
+        <Button title="Selecionar desde mapa" onPress={() => null} />
       </View>
     </ScrollView>
   );

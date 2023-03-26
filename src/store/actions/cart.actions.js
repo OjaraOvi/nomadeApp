@@ -24,6 +24,7 @@ export const confirmOrder = (items, total) => {
         body: JSON.stringify({
           date: Date.now(),
           items,
+          status: 'Pendiente',
           total,
         }),
       });
