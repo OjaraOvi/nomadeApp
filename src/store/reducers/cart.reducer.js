@@ -1,6 +1,6 @@
 import { cartType } from '../types/cart.types';
 import { sumTotal } from '../../utils/functions/index';
-const { ADD_TO_CART, REMOVE_FROM_CART, CONFIRM_ORDER } = cartType;
+const { ADD_TO_CART, REMOVE_FROM_CART, CONFIRM_ORDER, EMPTY_CART } = cartType;
 
 const initialState = {
   items: [],
@@ -32,6 +32,13 @@ const cartReducer = (state = initialState, action) => {
         items: filteredCart,
         total: sumTotal(filteredCart),
       };
+    case EMPTY_CART:
+      return {
+        ...state,
+        items: [],
+        total: 0,
+      };
+
     default:
       return state;
   }

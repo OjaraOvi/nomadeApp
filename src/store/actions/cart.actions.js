@@ -1,7 +1,7 @@
 import { REALTIME_DATABASE_URL } from '../../constants/firebase/index';
 import { cartType } from '../types/cart.types';
 
-const { ADD_TO_CART, CONFIRM_ORDER, REMOVE_FROM_CART } = cartType;
+const { ADD_TO_CART, CONFIRM_ORDER, REMOVE_FROM_CART, EMPTY_CART } = cartType;
 
 export const addToCart = (item) => ({
   type: ADD_TO_CART,
@@ -11,6 +11,12 @@ export const addToCart = (item) => ({
 export const remoreFromCart = (id) => ({
   type: REMOVE_FROM_CART,
   id,
+});
+
+export const emptyCart = (items, total) => ({
+  type: EMPTY_CART,
+  items,
+  total,
 });
 
 export const confirmOrder = (items, total) => {

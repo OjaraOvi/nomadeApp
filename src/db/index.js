@@ -22,11 +22,11 @@ export const init = () => {
   return promise;
 };
 
-export const insertPlance = (title, image, address, coords) => {
+export const insertPlace = (title, address, coords) => {
   const promise = new Promise((resolve, reject) => {
     db.transaction((tx) => {
       tx.executeSql(
-        'INSESRT INTO places (title, address,coords) VALUES (?,?,?);',
+        'INSERT INTO places (title, address,coords) VALUES (?,?,?);',
         [title, address, JSON.stringify(coords)],
         (_, result) => {
           resolve(result);

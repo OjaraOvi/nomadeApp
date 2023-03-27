@@ -30,7 +30,7 @@
       "permissions": ["ACCESS_FINE_LOCATION", "CAMERA", "WRITE_EXTERNAL_STORAGE"],
       "config": {
         "googleMaps": {
-          "apiKey": "asdasdasd"
+          "apiKey": "AIzaSyDlnh7I3xC24MHidCkNl8cKP_IUrsJ8Mq8"
         }
       }
     },
