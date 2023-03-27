@@ -27,15 +27,21 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "permissions": ["ACCESS_FINE_LOCATION", "CAMERA", "WRITE_EXTERNAL_STORAGE"],
+      "permissions": ["ACCESS_FINE_LOCATION", "WRITE_EXTERNAL_STORAGE"],
       "config": {
         "googleMaps": {
           "apiKey": "AIzaSyDlnh7I3xC24MHidCkNl8cKP_IUrsJ8Mq8"
         }
-      }
+      },
+      "package": "com.nomadeApp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "de05233a-f7d8-47bc-83c3-090b49a7551f"
+      }
     }
   }
 }
