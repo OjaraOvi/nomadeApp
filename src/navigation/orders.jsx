@@ -22,7 +22,7 @@ const OrdersNavigator = () => {
           color: THEME.colors.title,
         },
       }}>
-      <Stack.Screen name="Orders" component={Orders} />
+      <Stack.Screen name="Pedidos" component={Orders} />
     </Stack.Navigator>
   );
 };

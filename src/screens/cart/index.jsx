@@ -13,14 +13,11 @@ const Cart = ({ navigation }) => {
   // @ts-ignore
   const total = useSelector((state) => state.cart.total);
   const onDelete = (id) => {
-    //  dispatch(remoreFromCart(id));
+    dispatch(remoreFromCart(id));
   };
-  const onCreateOrder = () => {
-    dispatch(confirmOrder(cart, total));
-    navigation.navigate('Location', {
-      //  categoryId: item.id,
-      //title: item.title,
-    });
+  const onCreateOrder = async () => {
+    await dispatch(confirmOrder(cart, total));
+    navigation.navigate('Ubicación', {});
   };
   const renderItem = ({ item }) => <CartItem item={item} onDelete={onDelete} />;
   const keyExtractor = (item) => item.id.toString();

@@ -28,16 +28,16 @@ const ShopNavigator = () => {
           color: THEME.colors.title,
         },
       }}>
-      <Stack.Screen name="Category" component={Categories} />
+      <Stack.Screen name="Categoria" component={Categories} />
       <Stack.Screen
-        name="Product"
+        name="Productos"
         component={Products}
         options={({ route }) => ({
           title: route.params.title,
         })}
       />
       <Stack.Screen
-        name="Detail"
+        name="Detalle"
         component={ProductDetail}
         options={({ route }) => ({
           title: route.params.title,

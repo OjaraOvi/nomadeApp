@@ -7,7 +7,7 @@ const Categoies = ({ navigation }) => {
   const dispatch = useDispatch();
   const onSelected = (item) => {
     dispatch(selectCategory(item.id));
-    navigation.navigate('Product', {
+    navigation.navigate('Productos', {
       //  categoryId: item.id,
       title: item.title,
     });

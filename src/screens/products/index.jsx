@@ -16,7 +16,7 @@ const Products = ({ navigation }) => {
 
   const onSelected = (item) => {
     dispatch(selectProduct(item.id));
-    navigation.navigate('Detail', {
+    navigation.navigate('Detalle', {
       title: item.title,
     });
   };

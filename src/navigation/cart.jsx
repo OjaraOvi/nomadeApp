@@ -23,8 +23,8 @@ const CartNavigator = () => {
           color: THEME.colors.title,
         },
       }}>
-      <Stack.Screen name="Cart" component={Cart} />
-      <Stack.Screen name="Location" component={Location} />
+      <Stack.Screen name="Carrito" component={Cart} />
+      <Stack.Screen name="Ubicación" component={Location} />
     </Stack.Navigator>
   );
 };

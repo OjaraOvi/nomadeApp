@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import OrderItem from '../../components/order-item/index';
 import { styles } from './styles';
 import { useCallback, useEffect } from 'react';
-import { getOrders } from '../../store/actions/orders.actions';
+import { deleteOrder, getOrders } from '../../store/actions/orders.actions';
 
 const Orders = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ const Orders = ({ navigation }) => {
   // @ts-ignore
   const error = useSelector((state) => state.orders.error);
   const onDelete = (id) => {
-    //dispatch(deleteOrder(id));
+    dispatch(deleteOrder(id));
   };
 
   useFocusEffect(

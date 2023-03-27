@@ -7,10 +7,13 @@ import ShopNavigator from './ShopNavigation';
 import CartNavigator from './cart';
 import OrdersNavigator from './orders';
 import { THEME } from '../constants/themes/index';
+import { useSelector } from 'react-redux';
 
 const BottomTab = createBottomTabNavigator();
 
 const TabsNavigator = () => {
+  // @ts-ignore
+  const cart = useSelector((state) => state.cart.items);
   return (
     <BottomTab.Navigator
       initialRouteName="ShopTab"
@@ -63,6 +66,7 @@ const TabsNavigator = () => {
               color={THEME.colors.primary}
             />
           ),
+          tabBarBadge: cart.length,
         }}
       />
     </BottomTab.Navigator>

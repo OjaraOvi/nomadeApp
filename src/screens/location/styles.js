@@ -14,4 +14,25 @@ export const styles = StyleSheet.create({
     borderColor: COLORS.primary,
     borderWidth: 1,
   },
+  footer: {
+    backgroundColor: COLORS.white,
+    borderTopColor: COLORS.primary,
+    borderTopWidth: 1,
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+  },
+  buttonConfirm: {
+    backgroundColor: COLORS.primary,
+    borderRadius: 5,
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  buttonConfirmText: {
+    color: COLORS.white,
+    fontSize: 14,
+    fontFamily: 'Bitter-Medium',
+  },
 });
